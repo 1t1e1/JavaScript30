@@ -36,6 +36,10 @@ body,html {
   border-color: #ffc600;
   box-shadow: 0 0 1rem #ffc600;
 }
+.key:hover {
+  border: .4rem solid #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
 
 kbd {
   display: block;
