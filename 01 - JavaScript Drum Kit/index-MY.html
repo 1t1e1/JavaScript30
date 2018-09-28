@@ -82,7 +82,9 @@ function playSome(no){
   }, 130);
 
   // action in sound   finished
-  document.querySelector(`audio[data-key='${no}']`).play();
+  const sound = document.querySelector(`audio[data-key='${no}']`);
+  sound.currentTime = 0;
+  sound.play();
 }
 </script>
 
