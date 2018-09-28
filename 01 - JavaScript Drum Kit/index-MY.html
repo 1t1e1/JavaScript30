@@ -58,14 +58,32 @@
   <audio data-key="76" src="./sounds/tink.wav"></audio>
 
 <script>
-  const key_array = document.querySelectorAll(".key");
-  key_array.forEach((e)=> {
+document.addEventListener('keydown', function(event){
+  const key_pressed = event.keyCode;
+  
+  // valuedate this keyCode is one of these letter.
+  const keys = document.querySelectorAll('div.key');
+  keys.forEach(key => {
+    if (key_pressed == key.getAttribute("data-key")){
+      // console.log(key.getAttribute("data-key"));
+
+      // all effect when you pressed a button
+      playSome(key_pressed);
+    }
   });
+});
 
-  function playSound()
+function playSome(no){
+  // action in view (css) 
+  const nota_var = document.querySelector(`div[data-key='${no}']`);
+  nota_var.classList.add("playing");
+  setTimeout(function(){ 
+    nota_var.classList.remove("playing");
+  }, 130);
 
-  key_array[0].add
-
+  // action in sound   finished
+  document.querySelector(`audio[data-key='${no}']`).play();
+}
 </script>
 
 
