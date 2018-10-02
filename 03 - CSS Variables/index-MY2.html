@@ -72,7 +72,6 @@
     my_inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
 
     function handleUpdate(e) {
-      console.log(e);
       var ek = this.dataset.sizing || '' ;
       document.documentElement.style.setProperty(`--${this.name}`, this.value + ek );   
     }
