@@ -65,32 +65,16 @@
     const my_inputs = document.querySelectorAll("input");
     // console.log(my_inputs);
 
-    // change color.
-    const image = document.querySelector('img')
-    // my_inputs.forEach(input => input.addEventListener('change', function(){
-    my_inputs.forEach(input => input.addEventListener('change', function(){
-      if (this.type === 'color') {
-        image.style.setProperty('background', this.value);
-        // console.log(this.name);
-      }
-    }));
+    // change color 
+    my_inputs.forEach(input => input.addEventListener('change', handleUpdate));
 
     // change scale
     my_inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
 
     function handleUpdate(e) {
-      // if (this.name === 'spacing') {
-      //   //console.log(this);
-      //   image.style.setProperty('--spacing', this.value + 'px')
-      // }
-      // if (this.name === 'blur') {
-      //   // console.log(this);
-      //   image.style.setProperty('--blur', this.value + 'px')
-      // }
-      
-      // this solution is better.
-      image.style.setProperty(`--${this.name}`, this.value + 'px');
-
+      console.log(e);
+      var ek = this.dataset.sizing || '' ;
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + ek );   
     }
 
 
